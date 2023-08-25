@@ -9,7 +9,7 @@ RUN mkdir -p /config/qBittorrent/config /download \
     && echo " " >> /config/qBittorrent/config/qBittorrent.conf \
     && echo "[LegalNotice]" >> /config/qBittorrent/config/qBittorrent.conf \
     && echo "Accepted=true" >> /config/qBittorrent/config/qBittorrent.conf \
-    && chgrp -R 0 /config /download && chmod -R g+rwX /config /download
+    && chgrp -R 0 /config /download && chmod -R g+rwX /config /download && chmod 0777 /download
 
 # Define default command
 ENTRYPOINT exec /usr/bin/qbittorrent-nox --profile=/config --webui-port=8000
