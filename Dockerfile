@@ -15,4 +15,6 @@ RUN mkdir -p /config/qBittorrent/config /download \
 ENTRYPOINT ["qbittorrent-nox --profile=/config --webui-port=8000"]
 
 # Expose ports
-EXPOSE 8000 6881
+EXPOSE 8000 
+EXPOSE 6881/tcp
+EXPOSE 6881/udp
