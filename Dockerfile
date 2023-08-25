@@ -12,7 +12,8 @@ RUN mkdir -p /config/qBittorrent/config /download \
     && chgrp -R 0 /config /download && chmod -R g+rwX /config /download
 
 # Define default command
-ENTRYPOINT ["/usr/bin/qbittorrent-nox --profile=/config --webui-port=8000"]
+ENTRYPOINT exec /usr/bin/qbittorrent-nox --profile=/config --webui-port=8000
+
 
 # Expose ports
 EXPOSE 8000 
