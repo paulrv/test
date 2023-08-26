@@ -1,5 +1,5 @@
 FROM clearlinux:latest
-RUN swupd bundle-add curl nodejs && swupd clean --all && npm i -g @jesec/flood && curl -L https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-4.5.4_v2.0.9/x86_64-qbittorrent-nox -o /usr/bin/qbittorrent-nox && chmod +x /usr/bin/qbittorrent-nox
+RUN swupd bundle-add curl nodejs-basic && swupd clean --all && npm i -g @jesec/flood && curl -L https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-4.5.4_v2.0.9/x86_64-qbittorrent-nox -o /usr/bin/qbittorrent-nox && chmod +x /usr/bin/qbittorrent-nox
 RUN mkdir -p /config/qBittorrent/config /downloads/temp \
     && touch /config/qBittorrent/config/qBittorrent.conf \
     && echo "[BitTorrent]" >> /config/qBittorrent/config/qBittorrent.conf \
