@@ -12,8 +12,8 @@ RUN mkdir -p /config/qBittorrent/config /downloads/temp \
     && chgrp -R 0 /config /downloads && chmod -R g+rwX /config /downloads 
 
 # Define default command
-ENTRYPOINT exec /usr/bin/qbittorrent-nox --profile=/config --webui-port=8000
-
+#ENTRYPOINT exec /usr/bin/qbittorrent-nox --profile=/config --webui-port=8000
+ENTRYPOINT exec flood --host="127.0.0.1" --baseuri="/" --port=3000
 
 # Expose ports
 EXPOSE 8000 
